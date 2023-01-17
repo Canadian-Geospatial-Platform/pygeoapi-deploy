@@ -24,6 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name: Check out pygeoapi
+        uses: actions/checkout@master
+        with:
+          repository: Canadian-Geospatial-Platform/pygeoapi
+          token: ${{ secrets.my_pat }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
